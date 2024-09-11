@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcular Soma</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .resultado {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+
+      li a {
+        display: block;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Calcular Soma</h2>
+      <p>int INDICE = 12,</p>
+      <p>SOMA = 0,</p>
+      <p>K = 1;</p>
+      <p>enquanto K < INDICE faça</p>
+      <p>{ K = K + 1; SOMA = SOMA + K; }</p>
+      <p>imprimir(SOMA);</p>
+      <button onclick="calcularSoma()">Calcular</button>
+      <div class="resultado" id="resultado"></div>
+      <br />
+      <hr />
+      <br />
+      <h3>Ir para</h3>
+      <ul>
+        <li><a href="tarefa1.html">Teste Fibonacci</a></li>
+        <li><a href="tarefa2.html">Teste Contém Letra A</a></li>
+      </ul>
+    </div>
+
+    <script>
+      function calcularSoma() {
+        const INDICE = 12;
+        let SOMA = 0;
+        let K = 1;
+
+        while (K < INDICE) {
+          K = K + 1;
+          SOMA = SOMA + K;
+        }
+
+        document.getElementById(
+          "resultado"
+        ).innerText = `O valor final de SOMA é: ${SOMA}`;
+      }
+    </script>
+  </body>
+</html>

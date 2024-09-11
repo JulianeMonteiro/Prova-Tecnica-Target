@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador de Letra 'a'</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input {
+        padding: 10px;
+        margin-right: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 300px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .resultado {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Verifique a quantidade de vezes que a letra 'a' aparece na string</h2>
+      <input type="text" id="texto" placeholder="Informe uma string" />
+      <button onclick="contarLetraA()">Verificar</button>
+      <div class="resultado" id="resultado"></div>
+
+      <br />
+      <hr />
+      <br />
+      <h3>Ir para</h3>
+      <ul>
+        <li><a href="tarefa1.html">Teste Fibonacci</a></li>
+        <li><a href="tarefa3.html">Calcular Soma</a></li>
+      </ul>
+    </div>
+
+    <script>
+      function contarLetraA() {
+        const texto = document.getElementById("texto").value;
+        const count = (texto.match(/a/gi) || []).length;
+        const resultadoDiv = document.getElementById("resultado");
+
+        if (count > 0) {
+          resultadoDiv.innerHTML = `A letra 'a' aparece ${count} vezes na string.`;
+        } else {
+          resultadoDiv.innerHTML = "A letra 'a' não aparece na string.";
+        }
+      }
+    </script>
+  </body>
+</html>

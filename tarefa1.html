@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificador de Sequência de Fibonacci</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input {
+        padding: 10px;
+        margin-right: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 100px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .resultado {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Verifique se o número pertence à sequência de Fibonacci</h2>
+      <input type="number" id="numero" placeholder="Informe um número" />
+      <button onclick="verificarFibonacci()">Verificar</button>
+      <div class="resultado" id="resultado"></div>
+      <br />
+      <hr />
+      <br />
+      <h3>Ir para</h3>
+      <ul>
+        <li><a href="tarefa2.html">Teste Contém Letra A</a></li>
+        <li><a href="tarefa3.html">Calcular Soma</a></li>
+      </ul>
+    </div>
+
+    <script>
+      function pertenceFibonacci(n) {
+        let a = 0,
+          b = 1;
+        while (a < n) {
+          [a, b] = [b, a + b];
+        }
+        return a === n;
+      }
+
+      function verificarFibonacci() {
+        const numero = parseInt(document.getElementById("numero").value);
+        const resultadoDiv = document.getElementById("resultado");
+
+        if (isNaN(numero)) {
+          resultadoDiv.innerHTML = "Por favor, insira um número válido.";
+          return;
+        }
+
+        if (pertenceFibonacci(numero)) {
+          resultadoDiv.innerHTML = `O número ${numero} pertence à sequência de Fibonacci.`;
+        } else {
+          resultadoDiv.innerHTML = `O número ${numero} não pertence à sequência de Fibonacci.`;
+        }
+      }
+    </script>
+  </body>
+</html>
